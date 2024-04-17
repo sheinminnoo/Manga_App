@@ -17,7 +17,7 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
 
-let mongoDBUrl = 'mongodb+srv://sheinminoo69:2004142SHEIN@cluster0.knqmhj3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+let mongoDBUrl = process.env.MONGODB_URL
 mongoose.connect(mongoDBUrl).then(()=>{
     console.log("MongoDB is Connected to your APP!")
     app.listen(process.env.PORT,()=>{
