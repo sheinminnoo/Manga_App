@@ -14,14 +14,8 @@ import RegisterForm from './pages/RegisterForm.jsx';
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import GameDetail from './pages/GameDetail.jsx';
-import { ClerkProvider } from '@clerk/clerk-react'
 import MangaDetail from './pages/MangaDetail.jsx';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
- 
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
-}
 
 const router = createBrowserRouter([
   {
@@ -67,9 +61,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <RouterProvider router={router} />
-    </ClerkProvider>
   </React.StrictMode>
 
 );
